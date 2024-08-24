@@ -1,66 +1,30 @@
-## Foundry
+# Chainlink CCIP Bootcamp | Day3 Homework
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+## Disclaimer
 
-Foundry consists of:
+This is an example of how to estimate gas consumption when sending tokens across chains by using Chainlink CCIP.  
+This is for learning purpose not supposed to be used in production.
 
--   **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
--   **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
--   **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
--   **Chisel**: Fast, utilitarian, and verbose solidity REPL.
+Always refer to the [documentation](https://docs.chain.link/ccip) for latest updates.
 
-## Documentation
+## Get started
 
-https://book.getfoundry.sh/
+Clone the repository to your local environment and navigate to it:
 
-## Usage
-
-### Build
-
-```shell
-$ forge build
+```bash
+git clone https://github.com/y0ng0p3/ccip-gas-estimation.git
+cd ccip-gas-estimation
 ```
 
-### Test
+Then install the dependencies and compile the contracts.
 
-```shell
-$ forge test
+```bash
+forge install
+forge build
 ```
 
-### Format
+Run the with the following command:
 
-```shell
-$ forge fmt
-```
-
-### Gas Snapshots
-
-```shell
-$ forge snapshot
-```
-
-### Anvil
-
-```shell
-$ anvil
-```
-
-### Deploy
-
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
-
-### Cast
-
-```shell
-$ cast <subcommand>
-```
-
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
+```bash
+forge test
 ```
