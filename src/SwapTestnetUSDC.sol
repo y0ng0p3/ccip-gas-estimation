@@ -32,7 +32,7 @@ contract SwapTestnetUSDC is ReentrancyGuard {
         require(tokenIn == i_usdcToken || tokenIn == i_compoundUsdcToken);
         require(tokenOut == i_usdcToken || tokenOut == i_compoundUsdcToken);
 
-        IERC20(tokenIn).safeTransferFrom(msg.sender, address(this), amount);
+        IERC20(tokenIn).transferFrom(msg.sender, address(this), amount);
         IERC20(tokenOut).transfer(msg.sender, amount);
 
         emit Swap(tokenIn, tokenOut, amount, msg.sender);

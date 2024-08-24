@@ -56,6 +56,7 @@ contract TransferUSDC is OwnerIsCreator {
         uint64 _destinationChainSelector,
         address _receiver,
         uint256 _amount,
+        uint256 _iterations,
         uint64 _gasLimit
     )
         external
@@ -73,7 +74,7 @@ contract TransferUSDC is OwnerIsCreator {
 
         Client.EVM2AnyMessage memory message = Client.EVM2AnyMessage({
             receiver: abi.encode(_receiver),
-            data: "",
+            data: abi.encode(_iterations), 
             tokenAmounts: tokenAmounts,
             extraArgs: Client._argsToBytes(
                 Client.EVMExtraArgsV1({gasLimit: _gasLimit})
